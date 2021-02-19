@@ -12,6 +12,6 @@ export default function Screen({ children}) {
 
 const styles = StyleSheet.create({
   screen:{
-    paddingTop: Platform.os === 'android'? StatusBar.currentHeight : 0,//for android statusBar
+    paddingTop: Platform.os === 'android'? StatusBar.currentHeight : 0,//for android statusBar,
   }
 })
