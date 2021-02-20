@@ -10,12 +10,13 @@ import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
 import ViewImageScreen from './app/screens/ViewImageScreen';
 import MessagesScreen from './app/screens/MessagesScreen';
 import Screen from './app/components/Screen';
+import ListItem from './app/components/ListItem';
 
 export default function App() {
   return (
     <SafeAreaView>
       <Screen>
-        <Icons name="email" size={50} />
+        <ListItem title="My title" ImageComponent={<Icons name="email" />} />
       </Screen>
     </SafeAreaView>
   );
