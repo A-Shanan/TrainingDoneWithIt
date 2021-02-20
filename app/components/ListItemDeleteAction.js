@@ -1,7 +1,7 @@
-import React from 'react'
-import { StyleSheet, TouchableWithoutFeedback, View } from 'react-native'
+import React from 'react';
+import {StyleSheet, TouchableWithoutFeedback, View} from 'react-native';
 
-import colors from "../config/colors";
+import colors from '../config/colors';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default function ListItemDeleteAction({onPress}) {
@@ -11,7 +11,7 @@ export default function ListItemDeleteAction({onPress}) {
         <Icon name="magnify" color="white" size={35} />
       </View>
     </TouchableWithoutFeedback>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -20,5 +20,5 @@ const styles = StyleSheet.create({
     width: 70,
     justifyContent: 'center',
     alignItems: 'center',
-  }
-})
+  },
+});

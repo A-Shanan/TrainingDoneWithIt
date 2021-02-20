@@ -1,17 +1,12 @@
-import React from 'react'
-import { SafeAreaView, StyleSheet, Platform, StatusBar } from 'react-native'
+import React from 'react';
+import {SafeAreaView, StyleSheet, Platform, StatusBar} from 'react-native';
 
-export default function Screen({ children}) {
-  return (
-    <SafeAreaView style={styles.screen}>
-      {children}
-    </SafeAreaView>
-    
-  )
+export default function Screen({children}) {
+  return <SafeAreaView style={styles.screen}>{children}</SafeAreaView>;
 }
 
 const styles = StyleSheet.create({
-  screen:{
-    paddingTop: Platform.os === 'android'? StatusBar.currentHeight : 0,//for android statusBar,
-  }
-})
+  screen: {
+    paddingTop: Platform.os === 'android' ? StatusBar.currentHeight : 0, //for android statusBar,
+  },
+});
