@@ -10,7 +10,7 @@ function ListItem({
   image,
   title,
   subTitle,
-  ImageComponent,
+  IconComponent,
   onPress,
   renderRightActions,
 }) {
@@ -18,7 +18,7 @@ function ListItem({
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
         <View style={styles.container}>
-          {ImageComponent}
+          {IconComponent}
           {image && <Image style={styles.image} source={image} />}
           <View style={styles.detailContainer}>
             <AppText style={styles.title}>{title}</AppText>
@@ -33,7 +33,8 @@ function ListItem({
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    padding: 8,
+    padding: 15,
+    backgroundColor: colors.white,
   },
   detailContainer: {
     marginLeft: 10,

@@ -11,13 +11,13 @@ import ViewImageScreen from './app/screens/ViewImageScreen';
 import MessagesScreen from './app/screens/MessagesScreen';
 import Screen from './app/components/Screen';
 import ListItem from './app/components/ListItem';
+import Acco from './app/screens/AccountScreen';
+import AccountScreen from './app/screens/AccountScreen';
 
 export default function App() {
   return (
     <SafeAreaView>
-      <Screen>
-        <ListItem title="My title" ImageComponent={<Icons name="email" />} />
-      </Screen>
+      <AccountScreen />
     </SafeAreaView>
   );
 }
