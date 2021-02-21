@@ -15,11 +15,13 @@ import Acco from './app/screens/AccountScreen';
 import AccountScreen from './app/screens/AccountScreen';
 import ListingsScreen from './app/screens/ListingsScreen';
 import AppTextInput from './app/components/AppTextInput';
+import AppPicker from './app/components/AppPicker';
 
 export default function App() {
   const [isNew, setIsNew] = useState(false);
   return (
     <Screen>
+      <AppPicker icon="apps" placeholder="Category" />
       <AppTextInput placeholder="username" icon="email" />
       <Switch value={isNew} onValueChange={(newValue) => setIsNew(newValue)} />
     </Screen>
