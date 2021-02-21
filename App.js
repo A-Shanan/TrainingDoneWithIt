@@ -1,5 +1,5 @@
-import React from 'react';
-import {View, StyleSheet, SafeAreaView} from 'react-native';
+import React, {useState} from 'react';
+import {Text, TextInput} from 'react-native';
 
 import Icons from './app/components/Icons';
 import AppButton from './app/components/AppButton';
@@ -14,11 +14,12 @@ import ListItem from './app/components/ListItem';
 import Acco from './app/screens/AccountScreen';
 import AccountScreen from './app/screens/AccountScreen';
 import ListingsScreen from './app/screens/ListingsScreen';
+import AppTextInput from './app/components/AppTextInput';
 
 export default function App() {
   return (
-    <SafeAreaView>
-      <ListingsScreen />
-    </SafeAreaView>
+    <Screen>
+      <AppTextInput placeholder="username" icon="email" />
+    </Screen>
   );
 }
