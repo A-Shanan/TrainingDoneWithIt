@@ -13,11 +13,12 @@ import Screen from './app/components/Screen';
 import ListItem from './app/components/ListItem';
 import Acco from './app/screens/AccountScreen';
 import AccountScreen from './app/screens/AccountScreen';
+import ListingsScreen from './app/screens/ListingsScreen';
 
 export default function App() {
   return (
     <SafeAreaView>
-      <AccountScreen />
+      <ListingsScreen />
     </SafeAreaView>
   );
 }
