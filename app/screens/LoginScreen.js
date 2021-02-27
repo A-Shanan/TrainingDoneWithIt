@@ -1,11 +1,17 @@
-import React, {useState} from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
-
+import React from 'react';
+import {Image, StyleSheet} from 'react-native';
 import {Formik} from 'formik';
+import * as Yup from 'yup';
 
 import AppTextInput from '../components/AppTextInput';
 import AppButton from '../components/AppButton';
 import Screen from '../components/Screen';
+import AppText from '../components/AppText';
+
+const validationSchema = Yup.object().shape({
+  email: Yup.string().required().email().label('Email'),
+  password: Yup.string().required().min(8).label('Password'),
+});
 
 export default function LoginScreen() {
   return (
@@ -14,8 +20,9 @@ export default function LoginScreen() {
 
       <Formik
         initialValues={{email: '', password: ''}}
-        onSubmit={(values) => console.log(values)}>
-        {({handleChange, handleSubmit}) => (
+        onSubmit={(values) => console.log(values)}
+        validationSchema={validationSchema}>
+        {({handleChange, handleSubmit, errors}) => (
           <>
             <AppTextInput
               placeholder="Your Email"
@@ -26,6 +33,7 @@ export default function LoginScreen() {
               textContentType="emailAddress" //just for IOS keychain
               onChangeText={handleChange('email')}
             />
+            <AppText style={{color: '#a31212'}}>{errors.email}</AppText>
             <AppTextInput
               placeholder="Your password"
               icon="lock"
@@ -35,6 +43,7 @@ export default function LoginScreen() {
               textContentType="password" //just for IOS keychain
               onChangeText={handleChange('password')}
             />
+            <AppText style={{color: 'crimson'}}>{errors.password}</AppText>
             <AppButton title="Login" onPress={handleSubmit} />
           </>
         )}
