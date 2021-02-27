@@ -4,6 +4,7 @@ import {Formik} from 'formik';
 import * as Yup from 'yup';
 
 import AppTextInput from '../components/AppTextInput';
+import AppErrorMessage from '../components/AppErrorMessage';
 import AppButton from '../components/AppButton';
 import Screen from '../components/Screen';
 import AppText from '../components/AppText';
@@ -33,7 +34,7 @@ export default function LoginScreen() {
               textContentType="emailAddress" //just for IOS keychain
               onChangeText={handleChange('email')}
             />
-            <AppText style={{color: '#a31212'}}>{errors.email}</AppText>
+            <AppErrorMessage error={errors.email} />
             <AppTextInput
               placeholder="Your password"
               icon="lock"
@@ -43,7 +44,7 @@ export default function LoginScreen() {
               textContentType="password" //just for IOS keychain
               onChangeText={handleChange('password')}
             />
-            <AppText style={{color: 'crimson'}}>{errors.password}</AppText>
+            <AppErrorMessage error={errors.password} />
             <AppButton title="Login" onPress={handleSubmit} />
           </>
         )}
