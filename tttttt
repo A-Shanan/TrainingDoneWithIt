@@ -1,0 +1,5 @@
+ <AppFromPicker
+          items={categories}
+          name="category"
+          placeholder="Category"
+        />
