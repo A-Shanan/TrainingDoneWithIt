@@ -19,6 +19,7 @@ export default function AppPicker({
   icon,
   items,
   onSelectItem,
+  PickerItemCompoenet = PickerItem,
   placeholder,
   selectedItem,
   width = '100%',
@@ -54,7 +55,7 @@ export default function AppPicker({
             data={items}
             keyExtractor={(item) => item.value.toString()}
             renderItem={({item}) => (
-              <PickerItem
+              <PickerItemCompoenet
                 label={item.label}
                 onPress={() => {
                   setModalVisible(false);
